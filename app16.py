@@ -16,12 +16,14 @@ with st.chat_message("user", avatar="❌"):
    st.markdown(prompt)
 
 # Generate a response using the OpenAI API.
+Contexto = "information about Candidate"
+promptFinal = Contexto + prompt
 
 stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
             {"role": "system", "content": "You are an assistant."},
-            {"role": "user", "content": prompt}
+            {"role": "user", "content": promptFinal}
         ],
         max_tokens=800,
         temperature=0,
