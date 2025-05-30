@@ -22,7 +22,7 @@ with st.chat_message("user",avatar = "🦖"):
 stream = client.chat.completions.create(
         model="gpt-4o-mini",  
         messages=[
-            {"role": "system", "content": "You are an university professor."},
+            {"role": "system", "content": "You are an financial mathematics university professor."},
             {"role": "user", "content": prompt}
         ],
         max_tokens=800,
